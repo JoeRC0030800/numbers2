@@ -16,5 +16,66 @@ namespace numbers2
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            int i1 = 3 * 4;
+            int i2 = 12 / 4;
+            int i3 = 15 / 4;
+            int i4 = 15 % 5;
+            int i5 = 2 + 3 * 4;
+            int i6 = 2 + (3 * 4) / (2 - 4);
+            double d1 = 3.1 * 2.3;
+            double d2 = 1.0 / 3.0;
+            double d3 = 1 / 3;
+
+            richTextBox1.AppendText(i1 + "\n" + i2 + "\n" + i3 + "\n" + i4 + "\n" + i5 + "\n" + i6 + "\n");
+            richTextBox1.AppendText(d1 + "\n" + d2 + "\n" + d3 + "\n");
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            double d1 = Math.Pow(27, 0.333333333333333);
+            richTextBox2.AppendText(d1 + "\n");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double d = Convert.ToDouble(textBox1.Text);
+                double cr = Math.Pow(d, 1.0 / 3.0);
+                label1.Text = cr.ToString();
+            }
+            catch
+            {
+                label1.Text = ("Not a number");
+            }
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double d = Convert.ToDouble(textBox3.Text);
+                double d1 = Convert.ToDouble(textBox2.Text);
+                double cr = Math.Pow(d, 1.0 / d1);
+                label2.Text = cr.ToString();
+
+            }
+            catch
+            {
+                label2.Text = ("Not a Number");
+            }
+
+
+        }
     }
 }
